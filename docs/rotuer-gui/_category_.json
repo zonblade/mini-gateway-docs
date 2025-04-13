@@ -1,0 +1,8 @@
+{
+  "label": "[DEV] Router GUI",
+  "position": 40,
+  "link": {
+    "type": "generated-index",
+    "description": "Anything about router-gui"
+  }
+}
