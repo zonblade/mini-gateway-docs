@@ -6,25 +6,150 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #ffaa77;
-  --ifm-color-primary-dark: #ff9955;
-  --ifm-color-primary-darker: #ff8844;
-  --ifm-color-primary-darkest: #ff6611;
-  --ifm-color-primary-light: #ffbb99;
-  --ifm-color-primary-lighter: #ffccaa;
-  --ifm-color-primary-lightest: #ffddcc;
+  --ifm-color-primary: #1a56db;
+  --ifm-color-primary-dark: #174dc5;
+  --ifm-color-primary-darker: #1649ba;
+  --ifm-color-primary-darkest: #123c99;
+  --ifm-color-primary-light: #1d5ff1;
+  --ifm-color-primary-lighter: #2a68f2;
+  --ifm-color-primary-lightest: #4e81f4;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Flat minimalist adjustments */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-navbar-shadow: none;
+  --ifm-footer-background-color: #f8fafc;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+  --ifm-global-radius: 6px;
+  --ifm-button-border-radius: 6px;
+  --ifm-toc-border-color: #e5e7eb;
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #1f2937;
+  --ifm-heading-color: #111827;
+  --ifm-menu-color: #374151;
+  --ifm-toc-link-color: #4b5563;
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-navbar-link-color: #374151;
+  --ifm-footer-color: #4b5563;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #ffbb88;
-  --ifm-color-primary-dark: #ffaa77;
-  --ifm-color-primary-darker: #ff9966;
-  --ifm-color-primary-darkest: #ff7733;
-  --ifm-color-primary-light: #ffcc99;
-  --ifm-color-primary-lighter: #ffddaa;
-  --ifm-color-primary-lightest: #ffeedd;
+  --ifm-color-primary: #4d7cc9;
+  --ifm-color-primary-dark: #3a6dbe;
+  --ifm-color-primary-darker: #3667b3;
+  --ifm-color-primary-darkest: #2c5593;
+  --ifm-color-primary-light: #608bd0;
+  --ifm-color-primary-lighter: #6c94d3;
+  --ifm-color-primary-lightest: #8daddd;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Flat minimalist adjustments for dark mode */
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-navbar-background-color: #1e293b;
+  --ifm-footer-background-color: #1e293b;
+  --ifm-card-background-color: #1e293b;
+  --ifm-toc-border-color: #334155;
+  --ifm-font-color-base: #e2e8f0;
+  --ifm-heading-color: #f8fafc;
+  --ifm-menu-color: #cbd5e1;
+  --ifm-toc-link-color: #94a3b8;
+  --ifm-link-color: var(--ifm-color-primary-lighter);
+  --ifm-navbar-link-color: #e2e8f0;
+  --ifm-footer-color: #94a3b8;
+}
+
+/* Flat minimalist additional styles */
+.navbar {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-toc-border-color) !important;
+}
+
+.theme-doc-toc-desktop {
+  border-left: 1px solid var(--ifm-toc-border-color);
+}
+
+.card {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Clean up button styles for flat minimalist look */
+.button {
+  box-shadow: none;
+  border: 1px solid var(--ifm-color-primary);
+}
+
+/* Homepage specific styles */
+.homepage {
+  background-color: var(--ifm-background-color);
+}
+
+/* Ensure the main content area of the homepage is white in light mode */
+[data-theme='light'] .homepage .main-wrapper {
+  background-color: #ffffff;
+}
+
+/* Ensure the main content area of the homepage matches dark theme in dark mode */
+[data-theme='dark'] .homepage .main-wrapper {
+  background-color: var(--ifm-background-color);
+}
+
+/* Style the hero section */
+.hero {
+  background-color: var(--ifm-background-color);
+  padding: 4rem 0;
+}
+
+/* Style the features section */
+.features {
+  background-color: var(--ifm-background-color);
+  padding: 4rem 0;
+}
+
+/* Ensure proper text contrast in both modes */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+}
+
+p, li, span {
+  color: var(--ifm-font-color-base);
+}
+
+/* Ensure proper contrast for links */
+a {
+  color: var(--ifm-link-color);
+}
+
+a:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Ensure proper contrast for navigation */
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+}
+
+/* Ensure proper contrast for footer */
+.footer__link-item {
+  color: var(--ifm-footer-color);
+}
+
+/* Hide footer on the front page */
+.homepage .footer {
+  display: none;
 }
